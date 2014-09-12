@@ -1,0 +1,23 @@
+{
+  "name": "mumath",
+  "version": "0.0.0",
+  "description": "Micro math methods: isBetween, between, getPrecition, toPrecision",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dfcreative/mumath.git"
+  },
+  "keywords": [
+    "math",
+    "geometry"
+  ],
+  "author": "dfcreative",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfcreative/mumath/issues"
+  },
+  "homepage": "https://github.com/dfcreative/mumath"
+}
