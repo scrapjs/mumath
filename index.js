@@ -4,26 +4,52 @@
  */
 
 module.exports = {
-	betwee: between,
-	isBetween: isBetween,
-	toPrecision: toPrecision,
-	getPrecision: getPrecision
+	between: decorate(between),
+	isBetween: decorate(isBetween),
+	toPrecision: decorate(toPrecision),
+	getPrecision: decorate(getPrecision)
 };
 
 
+/**
+ * Get fn wrapped with array attrs recognition
+ *
+ * @return {Function} Target method recognizing arrays
+ */
+function decorate(fn){
+	return function(a){
+		if (a instanceof Array) {
+			var result = [], args = arguments, slice;
+			for (var i = 0; i < a.length; i++){
+				slice = [];
+				for (var j = 0, l = args.length; j < l; j++){
+					val = args[j] instanceof Array ? args[j][i] : args[j];
+					val = val || 0;
+					slice.push(val);
+				}
+				result.push(fn.apply(this, slice));
+			}
+			return result;
+		} else {
+			return fn.apply(this, arguments);
+		}
+	};
+}
+
 
 /**
- * Clamper
+ * Clamper.
+ * Detects proper clamp min/max.
  *
  * @param {number} a Current value to cut off
- * @param {number} min Left limit
- * @param {number} max Right limit
+ * @param {number} min One side limit
+ * @param {number} max Other side limit
  *
  * @return {number} Clamped value
  */
 
 function between(a, min, max){
-	return max > min ? Math.max(Math.min(a,max),min) : Math.max(Math.min(a,min),max)
+	return max > min ? Math.max(Math.min(a,max),min) : Math.max(Math.min(a,min),max);
 }
 
 
@@ -52,12 +78,12 @@ function isBetween(a, left, right){
  * @return {number}
  *
  * @example
- * round(213.34, 1) == 213
- * round(213.34, .1) == 213.3
- * round(213.34, 10) == 210
+ * toPrecision(213.34, 1) == 213
+ * toPrecision(213.34, .1) == 213.3
+ * toPrecision(213.34, 10) == 210
  */
 
-function round(value, step) {
+function toPrecision(value, step) {
 	step = parseFloat(step);
 	if (step === 0) return value;
 	value = Math.round(value / step) * step;
