@@ -22,7 +22,7 @@ function decorate(fn){
 			var result = [], args = arguments, slice;
 			for (var i = 0; i < a.length; i++){
 				slice = [];
-				for (var j = 0, l = args.length; j < l; j++){
+				for (var j = 0, l = args.length, val; j < l; j++){
 					val = args[j] instanceof Array ? args[j][i] : args[j];
 					val = val || 0;
 					slice.push(val);
