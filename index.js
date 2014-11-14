@@ -12,14 +12,15 @@ module.exports = {
 
 
 /**
- * Get fn wrapped with array attrs recognition
+ * Get fn wrapped with array/object attrs recognition
  *
- * @return {Function} Target method recognizing arrays
+ * @return {Function} Target function
  */
 function decorate(fn){
 	return function(a){
+		var args = arguments;
 		if (a instanceof Array) {
-			var result = [], args = arguments, slice;
+			var result = new Array(a.length), slice;
 			for (var i = 0; i < a.length; i++){
 				slice = [];
 				for (var j = 0, l = args.length, val; j < l; j++){
@@ -27,11 +28,25 @@ function decorate(fn){
 					val = val || 0;
 					slice.push(val);
 				}
-				result.push(fn.apply(this, slice));
+				result[i] = fn.apply(this, slice);
 			}
 			return result;
-		} else {
-			return fn.apply(this, arguments);
+		}
+		else if (typeof a === 'object') {
+			var result = {}, slice;
+			for (var i in a){
+				slice = [];
+				for (var j = 0, l = args.length, val; j < l; j++){
+					val = typeof args[j] === 'object' ? args[j][i] : args[j];
+					val = val || 0;
+					slice.push(val);
+				}
+				result[i] = fn.apply(this, slice);
+			}
+			return result;
+		}
+		else {
+			return fn.apply(this, args);
 		}
 	};
 }
