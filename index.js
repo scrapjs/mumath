@@ -9,7 +9,9 @@ module.exports = {
 	toPrecision: wrap(toPrecision),
 	getPrecision: getPrecision,
 	min: wrap(Math.min),
-	max: wrap(Math.max)
+	max: wrap(Math.max),
+	add: wrap(function(a,b){return a+b}),
+	sub: wrap(function(a,b){return a-b})
 };
 
 
