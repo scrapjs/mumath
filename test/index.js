@@ -1,6 +1,10 @@
 var m = require('../index');
 var assert = require('assert');
 
+assert.equal(m.min(0,2),0);
+assert.equal(m.max(0,2),2);
+assert.deepEqual(m.min([0,0],[2,-2]),[0,-2]);
+
 assert.equal(m.between(-100, 0, 100), 0);
 assert.equal(m.between(-100, 100, 0), 0);
 

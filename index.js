@@ -4,10 +4,12 @@
  */
 
 module.exports = {
-	between: decorate(between),
-	isBetween: decorate(isBetween),
-	toPrecision: decorate(toPrecision),
-	getPrecision: decorate(getPrecision)
+	between: wrap(between),
+	isBetween: wrap(isBetween),
+	toPrecision: wrap(toPrecision),
+	getPrecision: getPrecision,
+	min: wrap(Math.min),
+	max: wrap(Math.max)
 };
 
 
@@ -16,7 +18,7 @@ module.exports = {
  *
  * @return {Function} Target function
  */
-function decorate(fn){
+function wrap(fn){
 	return function(a){
 		var args = arguments;
 		if (a instanceof Array) {
@@ -82,6 +84,7 @@ function isBetween(a, left, right){
 	if (a <= right && a >= left) return true;
 	return false;
 }
+
 
 
 /**
