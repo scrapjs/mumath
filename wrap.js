@@ -12,7 +12,7 @@ module.exports = function(fn){
 				slice = [];
 				for (var j = 0, l = args.length, val; j < l; j++){
 					val = args[j] instanceof Array ? args[j][i] : args[j];
-					val = val || 0;
+					val = val;
 					slice.push(val);
 				}
 				result[i] = fn.apply(this, slice);
@@ -25,7 +25,7 @@ module.exports = function(fn){
 				slice = [];
 				for (var j = 0, l = args.length, val; j < l; j++){
 					val = typeof args[j] === 'object' ? args[j][i] : args[j];
-					val = val || 0;
+					val = val;
 					slice.push(val);
 				}
 				result[i] = fn.apply(this, slice);
