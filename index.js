@@ -1,6 +1,5 @@
 var wrap = require('./wrap');
 
-
 /**
  * Simple math utils.
  *
@@ -9,7 +8,7 @@ var wrap = require('./wrap');
 module.exports = {
 	between: wrap(require('./between')),
 	isBetween: wrap(require('./is-between')),
-	toPrecision: wrap(require('./to-precision')),
+	round: wrap(require('./round')),
 	getPrecision: require('./get-precision'),
 	min: wrap(Math.min),
 	max: wrap(Math.max),
@@ -19,6 +18,5 @@ module.exports = {
 	mult: wrap(function(a,b){return a*b}),
 	mod: wrap(function(a,b){return a%b}),
 	floor: wrap(function(a){return Math.floor(a)}),
-	ceil: wrap(function(a){return Math.ceil(a)}),
-	round: wrap(function(a){return Math.round(a)})
+	ceil: wrap(function(a){return Math.ceil(a)})
 };
