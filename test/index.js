@@ -19,3 +19,7 @@ assert.deepEqual(m.between({top: 120, bottom: -10}, {top: 0, bottom:0},  {top: 1
 //maths
 assert.deepEqual(m.sub({top:10,bottom:20}, {top:5, bottom:5}), {top:5, bottom:15});
 assert.deepEqual(m.add({top:10, bottom:20}, {top:5, bottom:5}), {top:15, bottom:25});
+
+//precisions
+assert.equal(m.precision(0.02), 2);
+assert.equal(m.round(0.3, .5), .5);

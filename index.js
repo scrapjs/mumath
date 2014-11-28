@@ -6,10 +6,10 @@ var wrap = require('./wrap');
  * @module  mumath
  */
 module.exports = {
-	between: wrap(require('./between')),
-	isBetween: wrap(require('./is-between')),
-	round: wrap(require('./round')),
-	getPrecision: require('./get-precision'),
+	between: require('./between'),
+	isBetween: require('./is-between'),
+	round: require('./round'),
+	precision: require('./precision'),
 	min: wrap(Math.min),
 	max: wrap(Math.max),
 	add: wrap(function(a,b){return a+b}),

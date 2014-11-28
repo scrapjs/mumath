@@ -12,10 +12,10 @@
  * toPrecision(213.34, 10) == 210
  */
 
-module.exports = function(value, step) {
+module.exports = require('./wrap')(function(value, step) {
 	if (step === 0) return value;
 	if (!step) return Math.round(value);
 	step = parseFloat(step);
 	value = Math.round(value / step) * step;
-	return parseFloat(value.toFixed(getPrecision(step)));
-};
+	return parseFloat(value.toFixed(require('./precision')(step)));
+});
