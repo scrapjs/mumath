@@ -1,13 +1,6 @@
 # μMath [![Build Status](https://travis-ci.org/dfcreative/mumath.svg?branch=master)](https://travis-ci.org/dfcreative/mumath) [![Code Climate](https://codeclimate.com/github/dfcreative/mumath/badges/gpa.svg)](https://codeclimate.com/github/dfcreative/mumath) <a href="UNLICENSE"><img src="http://upload.wikimedia.org/wikipedia/commons/6/62/PD-icon.svg" width="20"/></a>
 
 Common math functions aware of objects and arrays.
-
-* `min(a,b)`
-* `max(a,b)`
-* `between(a,min,max)`
-* `isBetween(a,min,max)`
-* `round(a)`
-
 Each can be required as `require('mumath/<fn>')`;
 
 
