@@ -1,8 +1,11 @@
 {
   "name": "mumath",
   "version": "0.4.1",
-  "description": "Micro math methods: isBetween, between, getPrecition, toPrecision",
+  "description": "Micro math methods",
   "main": "index.js",
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "test": "node test/index.js"
   },
