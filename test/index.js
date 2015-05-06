@@ -23,3 +23,24 @@ assert.deepEqual(m.add({top:10, bottom:20}, {top:5, bottom:5}), {top:15, bottom:
 //precisions
 assert.equal(m.precision(0.02), 2);
 assert.equal(m.round(0.3, .5), .5);
+
+//conditions
+assert.ok(m.gt(2,1));
+assert.ok(m.gte(2,1));
+assert.ok(m.lt(1,2));
+assert.ok(m.lte(1,2));
+
+//loop
+assert.equal(m.loop(10, 100), 10);
+
+assert.equal(m.loop(110, 100), 10);
+assert.equal(m.loop(110, 90), 20);
+
+assert.equal(m.loop(-110, 100), 90);
+
+assert.equal(m.loop(110, 0, 100), 10);
+assert.equal(m.loop(110, -10, 100), 0);
+assert.equal(m.loop(110, -10, 90), 10);
+assert.equal(m.loop(-110, -100, 0), -10);
+assert.equal(m.loop(-110, -100, 10), 0);
+assert.equal(m.loop(-110, -90, 10), -10);

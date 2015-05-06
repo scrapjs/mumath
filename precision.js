@@ -1,9 +1,10 @@
 /**
+ * @module  mumath/precision
+ *
  * Get precision from float:
  *
  * @example
  * 1.1 → 1, 1234 → 0, .1234 → 4
- *
  *
  * @param {number} n
  *

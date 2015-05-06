@@ -1,7 +1,5 @@
-var wrap = require('./wrap');
-
 /**
- * Simple math utils.
+ * Composed set of all math utils
  *
  * @module  mumath
  */
@@ -10,13 +8,21 @@ module.exports = {
 	isBetween: require('./is-between'),
 	round: require('./round'),
 	precision: require('./precision'),
-	min: wrap(Math.min),
-	max: wrap(Math.max),
-	add: wrap(function(a,b){return a+b}),
-	sub: wrap(function(a,b){return a-b}),
-	div: wrap(function(a,b){return a/b}),
-	mult: wrap(function(a,b){return a*b}),
-	mod: wrap(function(a,b){return a%b}),
-	floor: wrap(function(a){return Math.floor(a)}),
-	ceil: wrap(function(a){return Math.ceil(a)})
+	loop: require('./loop'),
+	add: require('./add'),
+	sub: require('./sub'),
+	min: require('./min'),
+	max: require('./max'),
+	div: require('./div'),
+	mult: require('./mult'),
+	mod: require('./mod'),
+	floor: require('./floor'),
+	ceil: require('./ceil'),
+
+	gt: require('./gt'),
+	gte: require('./gte'),
+	lt: require('./lt'),
+	lte: require('./lte'),
+	eq: require('./eq'),
+	ne: require('./ne'),
 };
