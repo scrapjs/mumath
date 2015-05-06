@@ -1,6 +1,6 @@
 {
   "name": "mumath",
-  "version": "0.4.3",
+  "version": "1.0.0",
   "description": "Micro math methods",
   "main": "index.js",
   "files": [
