@@ -50,6 +50,8 @@ An enhanced [mod-loop](http://npmjs.org/package/mod-loop) - loops value within a
 ### `max(a, b, ...)`
 ### `floor(a, b, ...)`
 ### `ceil(a, b, ...)`
+### `log(a)`
+### `lg(a)`
 
 Simple wrappers for arythmetical functions.
 

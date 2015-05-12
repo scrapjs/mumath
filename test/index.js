@@ -44,3 +44,9 @@ assert.equal(m.loop(110, -10, 90), 10);
 assert.equal(m.loop(-110, -100, 0), -10);
 assert.equal(m.loop(-110, -100, 10), 0);
 assert.equal(m.loop(-110, -90, 10), -10);
+
+//lg
+assert.equal(m.lg(100), 2);
+assert.equal(m.lg(10), 1);
+assert.equal(m.lg(1), 0);
+assert.equal(Math.round(m.lg(0.1)), -1);

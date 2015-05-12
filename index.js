@@ -14,6 +14,8 @@ module.exports = {
 	min: require('./min'),
 	max: require('./max'),
 	div: require('./div'),
+	lg: require('./lg'),
+	log: require('./log'),
 	mult: require('./mult'),
 	mod: require('./mod'),
 	floor: require('./floor'),
