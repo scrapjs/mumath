@@ -4,7 +4,7 @@
  * @return {Function} Target function
  */
 module.exports = function(fn){
-	return function(a){
+	return function (a) {
 		var args = arguments;
 		if (a instanceof Array) {
 			var result = new Array(a.length), slice;

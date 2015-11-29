@@ -1,10 +1,30 @@
 /**
- * @module mumath/mod
+ * Looping function for any framesize.
+ * Like fmod.
+ *
+ * @module  mumath/loop
+ *
  */
-module.exports = require('./wrap')(function () {
-	var result = arguments[0];
-	for (var i = 1, l = arguments.length; i < l; i++) {
-		result %= arguments[i];
+
+module.exports = require('./wrap')(function (value, left, right) {
+	//detect single-arg case, like mod-loop or fmod
+	if (right === undefined) {
+		right = left;
+		left = 0;
 	}
-	return result;
+
+	//swap frame order
+	if (left > right) {
+		var tmp = right;
+		right = left;
+		left = tmp;
+	}
+
+	var frame = right - left;
+
+	value = ((value + left) % frame) - left;
+	if (value < left) value += frame;
+	if (value > right) value -= frame;
+
+	return value;
 });

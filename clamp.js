@@ -1,5 +1,5 @@
 /**
- * Clamper.
+ * Clamp value.
  * Detects proper clamp min/max.
  *
  * @param {number} a Current value to cut off
