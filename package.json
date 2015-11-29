@@ -1,6 +1,6 @@
 {
   "name": "mumath",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Practical math utils for components",
   "main": "index.js",
   "files": [
