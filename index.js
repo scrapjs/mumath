@@ -20,6 +20,7 @@ module.exports = {
 	floor: require('./floor'),
 	ceil: require('./ceil'),
 	len: require('./len'),
+	closest: require('./closest'),
 
 	gt: require('./gt'),
 	gte: require('./gte'),

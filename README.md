@@ -36,9 +36,13 @@ Return value clamped by left/right limits (or vice-versa).
 Whether element is between left & right, including.
 
 
-### `mod(value, [min,]? max)`
+### `mod(value, min?, max)`
 
 An enhanced [mod-loop](http://npmjs.org/package/mod-loop) — loops value within a frame.
+
+### `closest(value, arr)`
+
+Get closest value out of a set.
 
 
 ### `mult(a, b, ...)`
