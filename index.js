@@ -21,6 +21,7 @@ module.exports = {
 	ceil: require('./ceil'),
 	len: require('./len'),
 	closest: require('./closest'),
+	order: require('./order'),
 
 	gt: require('./gt'),
 	gte: require('./gte'),

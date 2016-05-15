@@ -44,6 +44,11 @@ An enhanced [mod-loop](http://npmjs.org/package/mod-loop) — loops value within
 
 Get closest value out of a set.
 
+### `order(value)`
+
+Get order of magnitude for a number.
+
+`order(123) → 100; order(-0.0003) → 0.0001;`
 
 ### `mult(a, b, ...)`
 ### `div(a, b, ...)`

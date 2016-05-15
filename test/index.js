@@ -54,6 +54,11 @@ assert.equal(Math.round(m.lg(0.1)), -1);
 //len
 assert.equal(m.len(3,4), 5);
 
-
 //closest
 assert.equal(m.closest(0.2, [0.01, 0.1, 1, 10, 100]), 0.1);
+
+//order
+assert.equal(m.order(123), 100);
+assert.equal(m.order(0.000213), 0.0001);
+assert.equal(m.order(-123), 100);
+assert.equal(m.order(-0.0000123), 0.00001);
