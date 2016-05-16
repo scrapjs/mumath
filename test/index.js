@@ -62,3 +62,7 @@ assert.equal(m.order(123), 100);
 assert.equal(m.order(0.000213), 0.0001);
 assert.equal(m.order(-123), 100);
 assert.equal(m.order(-0.0000123), 0.00001);
+
+assert(m.within(1, 0, 2));
+assert(m.within(1, 2, 0));
+assert(!m.within(0, 2, 1));
