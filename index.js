@@ -22,6 +22,7 @@ module.exports = {
 	len: require('./len'),
 	closest: require('./closest'),
 	order: require('./order'),
+	mix: require('./mix'),
 
 	gt: require('./gt'),
 	gte: require('./gte'),

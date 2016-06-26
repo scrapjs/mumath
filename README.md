@@ -31,6 +31,11 @@ Get precision from float:
 Return value clamped by left/right limits (or vice-versa).
 
 
+### `mix(x, y, ratio)`
+
+Return value interpolated between x and y.
+
+
 ### `within(value, left, right)`
 
 Whether element is between left & right, including.

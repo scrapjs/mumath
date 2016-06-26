@@ -7,6 +7,7 @@ assert.deepEqual(m.min([0,0],[2,-2]),[0,-2]);
 
 assert.equal(m.clamp(-100, 0, 100), 0);
 assert.equal(m.clamp(-100, 100, 0), 0);
+assert.equal(m.clamp(-Infinity, -100, 0), -100);
 
 //limit arrays
 assert.deepEqual(m.clamp([-100, -200], -100, 100),  [-100, -100]);
@@ -66,3 +67,6 @@ assert.equal(m.order(-0.0000123), 0.00001);
 assert(m.within(1, 0, 2));
 assert(m.within(1, 2, 0));
 assert(!m.within(0, 2, 1));
+
+
+assert(m.mix(1,0,.5), .5);
