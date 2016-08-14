@@ -7,7 +7,7 @@
  *
  * @return {Boolean}
  */
-module.exports = require('./wrap')(function(a, left, right){
+module.exports = function(a, left, right){
 	if (left > right) {
 		var tmp = left;
 		left = right;
@@ -15,4 +15,4 @@ module.exports = require('./wrap')(function(a, left, right){
 	}
 	if (a <= right && a >= left) return true;
 	return false;
-});
+};

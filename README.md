@@ -31,7 +31,7 @@ Get precision from float:
 Return value clamped by left/right limits (or vice-versa).
 
 
-### `mix(x, y, ratio)`
+### `lerp(x, y, ratio)`
 
 Return value interpolated between x and y.
 
@@ -54,27 +54,3 @@ Get closest value out of a set.
 Get order of magnitude for a number.
 
 `order(123) → 100; order(-0.0003) → 0.0001;`
-
-### `mult(a, b, ...)`
-### `div(a, b, ...)`
-### `sub(a, b, ...)`
-### `add(a, b, ...)`
-### `mod(a, b, ...)`
-### `min(a, b, ...)`
-### `max(a, b, ...)`
-### `floor(a, b, ...)`
-### `ceil(a, b, ...)`
-### `log(a)`
-### `lg(a)`
-
-Simple wrappers for arythmetical functions.
-
-
-### `gt(a,b)`
-### `gte(a,b)`
-### `lt(a,b)`
-### `lte(a,b)`
-### `eq(a,b)`
-### `ne(a,b)`
-
-Simple conditional functions.

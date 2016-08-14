@@ -6,7 +6,7 @@
  *
  */
 
-module.exports = require('./wrap')(function (value, left, right) {
+module.exports = function (value, left, right) {
 	//detect single-arg case, like mod-loop or fmod
 	if (right === undefined) {
 		right = left;
@@ -27,4 +27,4 @@ module.exports = require('./wrap')(function (value, left, right) {
 	if (value > right) value -= frame;
 
 	return value;
-});
+};

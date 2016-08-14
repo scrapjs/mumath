@@ -9,6 +9,6 @@
  * @return {number} Clamped value
  */
 
-module.exports = require('./wrap')(function(a, min, max){
+module.exports = function(a, min, max){
 	return max > min ? Math.max(Math.min(a,max),min) : Math.max(Math.min(a,min),max);
-});
+};

@@ -11,9 +11,9 @@
  * @return {number} decimap places
  */
 
-module.exports = require('./wrap')(function(n){
+module.exports = function(n){
 	var s = n + '',
 		d = s.indexOf('.') + 1;
 
 	return !d ? 0 : s.length - d;
-});
+};

@@ -3,6 +3,6 @@
  *
  * @module mumath/lg
  */
-module.exports = require('./wrap')(function (a) {
+module.exports = function (a) {
 	return Math.log(a) / Math.log(10);
-});
+};
