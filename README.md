@@ -70,6 +70,10 @@ Get order of magnitude for a number.
 Same as `a % b === 0`, but with precision check.
 
 
+### `pretty(a, positions?)`
+
+Format number into human-readable form. Like `toFixed`, but works good.
+
 
 ## Related
 

@@ -68,3 +68,8 @@ assert(!m.within(0, 2, 1));
 
 
 assert(m.lerp(1,0,.5), .5);
+
+
+//formatting
+assert(m.pretty(1.0000000000000005e+33), '1');
+assert(m.pretty(0.1), '0.1');

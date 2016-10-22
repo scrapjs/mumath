@@ -17,5 +17,6 @@ module.exports = {
 	closest: wrap(require('./closest')),
 	order: wrap(require('./order')),
 	lerp: wrap(require('./lerp')),
-	isMultiple: wrap(require('./is-multiple'))
+	isMultiple: wrap(require('./is-multiple')),
+	pretty: wrap(require('./pretty'))
 };
