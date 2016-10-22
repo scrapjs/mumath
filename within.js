@@ -7,6 +7,7 @@
  *
  * @return {Boolean}
  */
+'use strict';
 module.exports = function(a, left, right){
 	if (left > right) {
 		var tmp = left;

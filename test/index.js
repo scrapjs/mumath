@@ -17,22 +17,17 @@ assert.deepEqual(m.clamp([-101, 101], [-50, -100], [100, 50]), [-50, 50]);
 assert.deepEqual(m.clamp({top: 120, bottom: -10}, 0, 100), {top: 100, bottom: 0});
 assert.deepEqual(m.clamp({top: 120, bottom: -10}, {top: 0, bottom:0},  {top: 100, bottom: 100}), {top: 100, bottom: 0});
 
-//maths
-// assert.deepEqual(m.sub({top:10,bottom:20}, {top:5, bottom:5}), {top:5, bottom:15});
-// assert.deepEqual(m.add({top:10, bottom:20}, {top:5, bottom:5}), {top:15, bottom:25});
-
 //precisions
 assert.equal(m.precision(0.02), 2);
 assert.equal(m.precision(100), 0);
 assert.equal(m.precision(1e-5), 5);
 assert.equal(m.precision(1e-19), 19);
+assert.equal(m.precision(1.0000000000000001e+33), 0);
 assert.equal(m.round(0.3, .5), .5);
 
-//conditions
-// assert.ok(m.gt(2,1));
-// assert.ok(m.gte(2,1));
-// assert.ok(m.lt(1,2));
-// assert.ok(m.lte(1,2));
+//multiple
+assert.equal(m.isMultiple(100,10), true);
+assert.equal(m.isMultiple(100.1,10, .1), true);
 
 //loop
 assert.equal(m.mod(10, 100), 10);
@@ -50,10 +45,10 @@ assert.equal(m.mod(-110, -100, 10), 0);
 assert.equal(m.mod(-110, -90, 10), -10);
 
 //lg
-assert.equal(m.lg(100), 2);
-assert.equal(m.lg(10), 1);
-assert.equal(m.lg(1), 0);
-assert.equal(Math.round(m.lg(0.1)), -1);
+assert.equal(m.log10(100), 2);
+assert.equal(m.log10(10), 1);
+assert.equal(m.log10(1), 0);
+assert.equal(Math.round(m.log10(0.1)), -1);
 
 //len
 assert.equal(m.len(3,4), 5);

@@ -1,6 +1,7 @@
 /**
  * @module  mumath/closest
  */
+'use strict';
 
 module.exports = function closest (num, arr) {
 	var curr = arr[0];

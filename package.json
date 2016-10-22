@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/dfcreative/mumath/issues"
   },
-  "homepage": "https://github.com/dfcreative/mumath"
+  "homepage": "https://github.com/dfcreative/mumath",
+  "dependencies": {
+    "almost-equal": "^1.1.0"
+  }
 }

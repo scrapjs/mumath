@@ -8,7 +8,7 @@
  *
  * @return {number} Clamped value
  */
-
+'use strict';
 module.exports = function(a, min, max){
 	return max > min ? Math.max(Math.min(a,max),min) : Math.max(Math.min(a,min),max);
 };

@@ -14,9 +14,11 @@ round(123.32, .5); //123.5
 
 ## API
 
-### `round(value, precision?)`
+### `round(value, step?)`
 
-Rounds value to optional `precision`, which is `1` by default.
+Rounds value to optional `step`, which is `1` by default.
+
+`round(0.3, .5)` → `.5`
 
 
 ### `len(a, b)`
@@ -61,3 +63,14 @@ Get closest value out of a set.
 Get order of magnitude for a number.
 
 `order(123) → 100; order(-0.0003) → 0.0001;`
+
+
+### `isMultiple(a, b, eps?)`
+
+Same as `a % b === 0`, but with precision check.
+
+
+
+## Related
+
+[bit-twiddle](https://www.npmjs.com/package/bit-twiddle) — utils for power-of-two numbers.

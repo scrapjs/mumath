@@ -3,6 +3,7 @@
  *
  * @module  mumath
  */
+'use strict';
 const wrap = require('./wrap');
 
 module.exports = {
@@ -11,9 +12,10 @@ module.exports = {
 	round: wrap(require('./round')),
 	precision: wrap(require('./precision')),
 	mod: wrap(require('./mod')),
-	lg: wrap(require('./lg')),
+	log10: wrap(require('./log10')),
 	len: wrap(require('./len')),
 	closest: wrap(require('./closest')),
 	order: wrap(require('./order')),
-	lerp: wrap(require('./lerp'))
+	lerp: wrap(require('./lerp')),
+	isMultiple: wrap(require('./is-multiple'))
 };

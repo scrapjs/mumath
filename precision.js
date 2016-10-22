@@ -10,9 +10,11 @@
  *
  * @return {number} decimap places
  */
+'use strict';
 
 module.exports = function(n){
-	var s = n + '',
+	var remainder = n % 1;
+	var s = remainder + '',
 		d = s.indexOf('.') + 1;
 
 	if (d) return s.length - d;

@@ -6,6 +6,7 @@
  *
  */
 
+'use strict';
 module.exports = function (value, left, right) {
 	//detect single-arg case, like mod-loop or fmod
 	if (right === undefined) {
