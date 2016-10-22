@@ -80,3 +80,6 @@ assert.equal(m.pretty(1.0000000000000005e+33), '1');
 assert.equal(m.pretty(0.1), '0.1');
 assert.equal(m.pretty(3.0000000000000004), '3');
 assert.equal(m.pretty(7.0000000000000036), '7');
+assert.equal(m.pretty(3.885780586188048e-16), '0');
+assert.equal(m.pretty(-1.9999999999999993), '-2');
+assert.equal(m.pretty(-0.9999999999999996), '-1');

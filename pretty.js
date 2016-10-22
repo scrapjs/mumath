@@ -10,15 +10,16 @@ var precision = require('./precision');
 var almost = require('almost-equal');
 
 module.exports = function (v, prec) {
-	if (almost(v, 0)) return 0;
+	if (almost(v, 0, almost.FLT_EPSILON)) return 0;
+
+	let remainder = Math.abs(v%1);
+	if (almost(remainder, 0) || almost(remainder, 1)) remainder = 0;
+	let whole = parseInt( Math.round(v) )
 
 	if (!prec) {
 		prec = precision(v);
 		prec = Math.min(prec, 20);
 	}
 
-	let remainder = v%1;
-	let whole = parseInt( Math.floor(v+.5) );
-
-	return whole + remainder.toFixed(prec).substring(1);
+	return whole + remainder.toFixed(prec).substring((whole+'').length);
 };

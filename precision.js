@@ -22,7 +22,7 @@ module.exports = function (n, eps) {
 	if (e >= 0) return parseInt(str.substring(e+2));
 
 	//imperfect ints, like 3.0000000000000004 or 1.9999999999999998
-	var remainder = n % 1;
+	var remainder = Math.abs(n % 1);
 	var remStr = remainder + '';
 
 	if (eps == null) eps = almost.FLT_EPSILON;
