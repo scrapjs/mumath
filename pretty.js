@@ -8,18 +8,18 @@
 
 var precision = require('./precision');
 var almost = require('almost-equal');
+var normalize = require('./normalize');
 
-module.exports = function (v, prec) {
-	if (almost(v, 0, almost.FLT_EPSILON)) return 0;
+module.exports = function (v, eps) {
+	if (eps == null) eps = almost.FLT_EPSILON;
 
-	let remainder = Math.abs(v%1);
-	if (almost(remainder, 0) || almost(remainder, 1)) remainder = 0;
-	let whole = parseInt( Math.round(v) )
+	v = normalize(v);
 
-	if (!prec) {
-		prec = precision(v);
+	if (almost(v, 0, eps)) return '0';
+
+	var prec = precision(v, eps);
 		prec = Math.min(prec, 20);
-	}
 
-	return whole + remainder.toFixed(prec).substring((whole+'').length);
+	// return v.toFixed(prec);
+	return v < 1 ? v.toFixed(prec) : v.toPrecision(Math.max(prec+1,1));
 };

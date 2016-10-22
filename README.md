@@ -16,9 +16,16 @@ round(123.32, .5); //123.5
 
 ### `round(value, step?)`
 
-Rounds value to optional `step`, which is `1` by default.
+Rounds value to optional `step`.
 
 `round(0.3, .5)` → `.5`
+
+
+### `normalize(flt)`
+
+Get rid of float remainder.
+
+`n(-0.4999999999999998)` → `-.5`
 
 
 ### `len(a, b)`

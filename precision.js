@@ -13,8 +13,11 @@
 'use strict';
 
 var almost = require('almost-equal');
+var norm = require('./normalize');
 
 module.exports = function (n, eps) {
+	n = norm(n);
+
 	var str = n + '';
 
 	//1e-10 etc
@@ -25,7 +28,6 @@ module.exports = function (n, eps) {
 	var remainder = Math.abs(n % 1);
 	var remStr = remainder + '';
 
-	if (eps == null) eps = almost.FLT_EPSILON;
 	if (almost(remainder, 1, eps) || almost(remainder, 0, eps)) return 0;
 
 	//usual floats like .0123

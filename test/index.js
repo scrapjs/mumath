@@ -17,7 +17,15 @@ assert.deepEqual(m.clamp([-101, 101], [-50, -100], [100, 50]), [-50, 50]);
 assert.deepEqual(m.clamp({top: 120, bottom: -10}, 0, 100), {top: 100, bottom: 0});
 assert.deepEqual(m.clamp({top: 120, bottom: -10}, {top: 0, bottom:0},  {top: 100, bottom: 100}), {top: 100, bottom: 0});
 
+//normalize
+assert.equal(m.normalize(-0.4999999999999998), -.5);
+assert.equal(m.normalize(1.5000000000000002), 1.5);
+assert.equal(m.normalize(10.5000000000000002), 10.5);
+assert.equal(m.normalize(-0.7999999999999996), -.8);
+
+
 //precisions
+assert.equal(m.precision(1.0000000000000005e+33), 0);
 assert.equal(m.precision(3.0000000000000004), 0);
 assert.equal(m.precision(1.9999999999999998), 0);
 assert.equal(m.precision(0.02), 2);
@@ -26,6 +34,10 @@ assert.equal(m.precision(1e-1), 1);
 assert.equal(m.precision(1e-5), 5);
 assert.equal(m.precision(1e-19), 19);
 assert.equal(m.precision(1.0000000000000001e+33), 0);
+assert.equal(m.precision(-0.4999999999999998), 1);
+assert.equal(m.precision(1.5000000000000002), 1);
+assert.equal(m.precision(-0.7999999999999996), 1);
+
 
 assert.equal(m.round(0.3, .5), .5);
 
@@ -76,10 +88,13 @@ assert.equal(m.lerp(1,0,.5), .5);
 
 //formatting
 assert.equal(m.pretty(1.9999999999999998), '2');
-assert.equal(m.pretty(1.0000000000000005e+33), '1');
+assert.equal(m.pretty(1.0000000000000005e+33), '1e+33');
 assert.equal(m.pretty(0.1), '0.1');
 assert.equal(m.pretty(3.0000000000000004), '3');
 assert.equal(m.pretty(7.0000000000000036), '7');
 assert.equal(m.pretty(3.885780586188048e-16), '0');
 assert.equal(m.pretty(-1.9999999999999993), '-2');
 assert.equal(m.pretty(-0.9999999999999996), '-1');
+assert.equal(m.pretty(1.5000000000000002), '1.5');
+assert.equal(m.pretty(-0.4999999999999998), '-0.5');
+assert.equal(m.pretty(-0.7999999999999996), '-0.8');
