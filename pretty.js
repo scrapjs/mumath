@@ -21,5 +21,5 @@ module.exports = function (v, eps) {
 		prec = Math.min(prec, 20);
 
 	// return v.toFixed(prec);
-	return v < 1 ? v.toFixed(prec) : v.toPrecision(Math.max(prec+1,1));
+	return v.toFixed(prec);
 };
