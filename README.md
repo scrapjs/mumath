@@ -79,6 +79,8 @@ Same as `a % b === 0`, but with precision check.
 
 ### `pretty(a, positions?)`
 
+DEPRECATED: rounding floats is non-trivial task
+
 Format number into human-readable form. Like `toFixed`, but works good.
 
 

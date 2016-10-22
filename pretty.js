@@ -10,15 +10,13 @@ var precision = require('./precision');
 var almost = require('almost-equal');
 var normalize = require('./normalize');
 
-module.exports = function (v, eps) {
-	if (eps == null) eps = almost.FLT_EPSILON;
+module.exports = function (v, prec) {
+	if (almost(v, 0)) return '0';
 
-	v = normalize(v);
-
-	if (almost(v, 0, eps)) return '0';
-
-	var prec = precision(v, eps);
+	if (prec == null) {
+		prec = precision(v);
 		prec = Math.min(prec, 20);
+	}
 
 	// return v.toFixed(prec);
 	return v.toFixed(prec);
