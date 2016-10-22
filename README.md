@@ -19,6 +19,11 @@ round(123.32, .5); //123.5
 Rounds value to optional `precision`, which is `1` by default.
 
 
+### `len(a, b)`
+
+Return length of a vector.
+
+
 ### `precision(value)`
 
 Get precision from float:
@@ -45,9 +50,11 @@ Whether element is between left & right, including.
 
 An enhanced [mod-loop](http://npmjs.org/package/mod-loop) — loops value within a frame.
 
-### `closest(value, arr)`
+
+### `closest(value, list)`
 
 Get closest value out of a set.
+
 
 ### `order(value)`
 

@@ -23,6 +23,9 @@ assert.deepEqual(m.clamp({top: 120, bottom: -10}, {top: 0, bottom:0},  {top: 100
 
 //precisions
 assert.equal(m.precision(0.02), 2);
+assert.equal(m.precision(100), 0);
+assert.equal(m.precision(1e-5), 5);
+assert.equal(m.precision(1e-19), 19);
 assert.equal(m.round(0.3, .5), .5);
 
 //conditions

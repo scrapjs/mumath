@@ -15,5 +15,11 @@ module.exports = function(n){
 	var s = n + '',
 		d = s.indexOf('.') + 1;
 
-	return !d ? 0 : s.length - d;
+	if (d) return s.length - d;
+
+	var e = s.indexOf('e-');
+
+	if (e >= 0) return parseInt(s.substring(e+2));
+
+	return 0;
 };
