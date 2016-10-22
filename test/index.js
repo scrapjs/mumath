@@ -18,11 +18,15 @@ assert.deepEqual(m.clamp({top: 120, bottom: -10}, 0, 100), {top: 100, bottom: 0}
 assert.deepEqual(m.clamp({top: 120, bottom: -10}, {top: 0, bottom:0},  {top: 100, bottom: 100}), {top: 100, bottom: 0});
 
 //precisions
+assert.equal(m.precision(3.0000000000000004), 0);
+assert.equal(m.precision(1.9999999999999998), 0);
 assert.equal(m.precision(0.02), 2);
 assert.equal(m.precision(100), 0);
+assert.equal(m.precision(1e-1), 1);
 assert.equal(m.precision(1e-5), 5);
 assert.equal(m.precision(1e-19), 19);
 assert.equal(m.precision(1.0000000000000001e+33), 0);
+
 assert.equal(m.round(0.3, .5), .5);
 
 //multiple
@@ -67,9 +71,12 @@ assert(m.within(1, 2, 0));
 assert(!m.within(0, 2, 1));
 
 
-assert(m.lerp(1,0,.5), .5);
+assert.equal(m.lerp(1,0,.5), .5);
 
 
 //formatting
-assert(m.pretty(1.0000000000000005e+33), '1');
-assert(m.pretty(0.1), '0.1');
+assert.equal(m.pretty(1.9999999999999998), '2');
+assert.equal(m.pretty(1.0000000000000005e+33), '1');
+assert.equal(m.pretty(0.1), '0.1');
+assert.equal(m.pretty(3.0000000000000004), '3');
+assert.equal(m.pretty(7.0000000000000036), '7');

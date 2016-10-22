@@ -17,5 +17,8 @@ module.exports = function (v, prec) {
 		prec = Math.min(prec, 20);
 	}
 
-	return v.toFixed(prec);
+	let remainder = v%1;
+	let whole = parseInt( Math.floor(v+.5) );
+
+	return whole + remainder.toFixed(prec).substring(1);
 };

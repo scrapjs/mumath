@@ -12,16 +12,27 @@
  */
 'use strict';
 
-module.exports = function(n){
+var almost = require('almost-equal');
+
+module.exports = function (n, eps) {
+	var str = n + '';
+
+	//1e-10 etc
+	var e = str.indexOf('e-');
+	if (e >= 0) return parseInt(str.substring(e+2));
+
+	//imperfect ints, like 3.0000000000000004 or 1.9999999999999998
 	var remainder = n % 1;
-	var s = remainder + '',
-		d = s.indexOf('.') + 1;
+	var remStr = remainder + '';
 
-	if (d) return s.length - d;
+	if (eps == null) eps = almost.FLT_EPSILON;
+	if (almost(remainder, 1, eps) || almost(remainder, 0, eps)) return 0;
 
-	var e = s.indexOf('e-');
+	//usual floats like .0123
+	var d = remStr.indexOf('.') + 1;
 
-	if (e >= 0) return parseInt(s.substring(e+2));
+	if (d) return remStr.length - d;
 
+	//regular inte
 	return 0;
 };
