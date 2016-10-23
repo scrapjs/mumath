@@ -65,6 +65,15 @@ An enhanced [mod-loop](http://npmjs.org/package/mod-loop) — loops value within
 Get closest value out of a set.
 
 
+### `scale(value, list)`
+
+Get first scale out of a list of basic scales, aligned to the power. E. g.
+
+`step(.37, [1, 2, 5])` → `.5`
+`step(456, [1, 2])` → `1000`
+
+Similar to closest, but takes all possible powers of scales.
+
 ### `order(value)`
 
 Get order of magnitude for a number.

@@ -86,6 +86,12 @@ assert(!m.within(0, 2, 1));
 assert.equal(m.lerp(1,0,.5), .5);
 
 
+//step
+assert.equal(m.scale(.1, [1, 2, 5]), .1);
+assert.equal(m.scale(.1, [1, 2, 5]), .1);
+
+
+
 //formatting
 // assert.equal(m.pretty(1.9999999999999998), '2');
 // assert.equal(m.pretty(1.0000000000000005e+33), '1e+33');

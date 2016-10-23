@@ -18,6 +18,7 @@ module.exports = {
 	order: wrap(require('./order')),
 	lerp: wrap(require('./lerp')),
 	isMultiple: wrap(require('./is-multiple')),
-	pretty: wrap(require('./pretty')),
-	normalize: wrap(require('./normalize'))
+	normalize: wrap(require('./normalize')),
+	scale: wrap(require('./scale')),
+	// pretty: wrap(require('./pretty')),
 };
