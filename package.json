@@ -3,9 +3,6 @@
   "version": "3.3.0",
   "description": "Practical math utils for components",
   "main": "index.js",
-  "files": [
-    "*.js"
-  ],
   "scripts": {
     "test": "node test/index.js"
   },
