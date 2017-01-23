@@ -21,13 +21,6 @@ Rounds value to optional `step`.
 `round(0.3, .5)` → `.5`
 
 
-### `normalize(flt)`
-
-Get rid of float remainder.
-
-`n(-0.4999999999999998)` → `-.5`
-
-
 ### `len(a, b)`
 
 Return length of a vector.
@@ -86,13 +79,7 @@ Get order of magnitude for a number.
 Same as `a % b === 0`, but with precision check.
 
 
-### `pretty(a, positions?)`
-
-DEPRECATED: rounding floats is non-trivial task
-
-Format number into human-readable form. Like `toFixed`, but works good.
-
-
 ## Related
 
-[bit-twiddle](https://www.npmjs.com/package/bit-twiddle) — utils for power-of-two numbers.
+* [bit-twiddle](https://www.npmjs.com/package/bit-twiddle) — utils for power-of-two numbers.
+* [pretty-number](https://www.npmjs.com/package/pretty-number) — format number to pretty view.
